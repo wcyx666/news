@@ -1,0 +1,38 @@
+<!--pages/message/message.wxml-->
+<wxs src="../filter/filter.wxs" module="filter" />
+<view class="message"  wx:if="{{ messageList.length > 0 }}">
+  <view class="message-list" wx:for="{{ messageList }}" >
+    <view class="message-list-tx">
+      <image src='{{ item.avatarUrl }}'></image>
+    </view>
+    <view class="message-list-content">
+      <view class="message-list-content-info">
+        <view class="message-list-content-name">
+          {{ item.nickName }}
+        </view>
+        <view class="message-list-content-text">
+          {{ item.content }}
+        </view>
+      </view>
+      <view class="message-list-live">
+        <view class="message-list-live-left">
+          {{ filter.getDateDiff(item.hour) }}
+        </view>
+        <view class="message-list-live-right">
+          <view class="message-list-live-z" data-id="{{ item.id }}" catchtap='getlive'>
+            <image src='../image/live.png'></image>
+            <text>{{ item.live }}</text>
+          </view>
+          <!--<view class="message-list-live-p">
+            <image src='../image/comment.png'></image>
+            <text>评论</text>
+          </view>-->
+        </view>
+      </view>
+    </view>  
+  </view>
+</view>
+<view class="my_mess_null" wx:if="{{ messageList.length == 0 }}">
+    <image src='../image/null.png'></image>
+    <view>暂无数据</view>
+</view>

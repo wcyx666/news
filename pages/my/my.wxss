@@ -1,0 +1,142 @@
+/* pages/my/my.wxss */
+.my {
+  font-size: 14px;
+  background: #fafafa;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.my_info {
+  overflow: hidden; 
+  background: #fff;
+  padding: 30rpx 25rpx;
+  border-bottom: 1rpx solid #f5f5f5;
+}
+.my_info_phone {
+  float: left;
+  margin-left: 20rpx;
+}
+.my_info_name {
+  font-size: 16px;
+  margin-top: 5rpx;
+}
+.my_info_city {
+  color: #999;
+  padding-top: 10rpx;
+}
+.my_info_gender {
+  margin-right: 10rpx;
+}
+.my_info_tx {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 100rpx;
+  float: left;
+  overflow: hidden;
+}
+.my_info_tx image {
+  width: 100rpx;
+  float: right;
+}
+.my_mess {
+  background: #fff;
+  padding: 0 25rpx;
+}
+.my_mess_title {
+  font-size: 16px;
+}
+.my_mess_title text {
+  padding: 30rpx 0;
+  display: inline-block;
+  border-bottom: 2px solid #4b8ff4;
+}
+.my_mess_content {
+  margin-top: 20rpx;
+  background: #fff;
+}
+
+.sign_out {
+  padding:0 25rpx;
+  padding-top: 100rpx;
+}
+.sign_out_box {
+  width: 100%;
+  height: 85rpx;
+  text-align: center;
+  border: 1rpx solid #ededed;
+  line-height: 85rpx;
+  border-radius: 3rpx;
+}
+.return {
+  float: right !important;
+}
+.tn {
+  background-color: #fff;
+  width: 200rpx;
+  float: left;
+  font-size: 14px;
+  color: #999;
+  top: 45rpx;
+}
+
+.message-list {
+  border-bottom: 1rpx solid #f5f5f5;
+  padding: 20rpx;
+  display: -webkit-box;
+}
+.message-list-tx image {
+  width: 80rpx;
+  height: 80rpx;
+  margin-right: 20rpx;
+}
+.message-list-content {
+  box-flex: 1;
+  -webkit-box-flex: 1;
+  font-size: 16px;
+}
+.message-list-content-text {
+  color: #333;
+  margin-top: 10rpx;
+}
+.message-list-live {
+  font-size: 14px;
+  overflow: hidden;
+  margin-top: 15rpx;
+}
+.message-list-live-left {
+  float: left;
+}
+.message-list-live-right {
+  float: right;
+}
+.message-list-live test {
+  display: inline-block;
+  line-height: 32rpx;
+}
+.message-list-live-z{
+  float: left;
+  margin-right: 20rpx;
+}
+.message-list-live-p{
+  float: left;
+}
+.message-list-live image {
+  width: 28rpx;
+  height: 28rpx;
+  vertical-align:middle;
+  margin-right: 5rpx;
+}
+.my_mess_null {
+  text-align: center;
+}
+.my_mess_null image {
+  width: 220rpx;
+  height:180rpx;
+  padding-top: 50rpx;
+  padding-bottom: 35rpx;
+}
+.my_mess_null view {
+  font-size: 16px;
+  color: #999;
+}
+

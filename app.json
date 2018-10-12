@@ -1,0 +1,32 @@
+{
+  "pages":[
+    "pages/message/message",
+    "pages/home/home",
+    "pages/my/my",
+    
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "小同讲故事",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "新闻"
+      },
+      {
+        "pagePath": "pages/message/message",
+        "text": "寄语"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的"
+      }
+    ]
+    
+  }
+}

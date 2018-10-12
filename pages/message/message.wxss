@@ -1,0 +1,65 @@
+/* pages/message/message.wxss */
+.message-list {
+  border-bottom: 1rpx solid #f5f5f5;
+  padding: 20rpx;
+  display: -webkit-box;
+}
+.message-list-tx image {
+  width: 80rpx;
+  height: 80rpx;
+  margin-right: 20rpx;
+}
+.message-list-content {
+  box-flex: 1;
+  -webkit-box-flex: 1;
+  font-size: 16px;
+}
+.message-list-content-name {
+  color: #07429a;
+}
+.message-list-content-text {
+  color: #333;
+  margin-top: 10rpx;
+}
+.message-list-live {
+  font-size: 14px;
+  overflow: hidden;
+  margin-top: 15rpx;
+}
+.message-list-live-left {
+  float: left;
+}
+.message-list-live-right {
+  float: right;
+}
+.message-list-live test {
+  display: inline-block;
+  line-height: 32rpx;
+}
+.message-list-live-z{
+  float: left;
+  margin-right: 20rpx;
+}
+.message-list-live-p{
+  float: left;
+}
+.message-list-live image {
+  width: 28rpx;
+  height: 28rpx;
+  vertical-align:middle;
+  margin-right: 5rpx;
+}
+
+.my_mess_null {
+  text-align: center;
+}
+.my_mess_null image {
+  width: 220rpx;
+  height:180rpx;
+  padding-top: 50rpx;
+  padding-bottom: 35rpx;
+}
+.my_mess_null view {
+  font-size: 16px;
+  color: #999;
+}

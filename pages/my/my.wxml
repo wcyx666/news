@@ -1,0 +1,61 @@
+<!--pages/my/my.wxml-->
+<wxs src="../filter/filter.wxs" module="filter" />
+<view class="my">
+  <view class="my_info">
+    <button wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo" class="tn" wx:if="{{ userInfo == '' }}">点击登录</button>
+    <view class="my_info_tx">
+      <image src='{{ userInfo.avatarUrl }}' mode="widthFix"></image>
+    </view>
+    <view class="my_info_phone" wx:if="{{ userInfo != '' }}">
+      <view class="my_info_name">{{ userInfo.nickName }}</view>
+      <view class="my_info_city">
+        <text class="my_info_gender">{{ userInfo.gender == 1?'男':'女' }}</text>
+        <text>{{ userInfo.province }}{{ userInfo.city }}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="my_mess">
+    <view class="my_mess_title">
+      <text>我的寄语</text>
+    </view>
+  </view>
+
+  <view class="my_mess_content" wx:if="{{ messList.length > 0 }}">
+    <view class="message-list" wx:for="{{ messList }}">
+      <view class="message-list-tx">
+        <image src='{{ item.avatarUrl }}'></image>
+      </view>
+      <view class="message-list-content">
+        <view class="message-list-content-info">
+          <view class="message-list-content-name">
+            {{ item.nickName }}
+          </view>
+          <view class="message-list-content-text">
+            {{ item.content }}
+          </view>
+        </view>
+        <view class="message-list-live">
+          <view class="message-list-live-left">
+            {{ filter.getDateDiff(item.hour) }}
+          </view>
+          <view class="message-list-live-right">
+            <view class="message-list-live-z" data-id="{{ item.id }}" catchtap='getlive'>
+              <image src='../image/live.png'></image>
+              <text>{{ item.live }}</text>
+            </view>
+            <!--<view class="message-list-live-p">
+              <image src='../image/comment.png'></image>
+              <text>评论</text>
+            </view>-->
+          </view>
+        </view>
+      </view>  
+    </view>
+  </view>
+
+  <view class="my_mess_null" wx:if="{{ messList.length == 0 }}">
+    <image src='../image/null.png'></image>
+    <view>暂无数据</view>
+  </view>
+</view>

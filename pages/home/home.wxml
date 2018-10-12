@@ -1,0 +1,75 @@
+<!--pages/home/home.wxml-->
+<view class="dt-home">
+  <view class="dt-home-banner">
+    <view class="dt-home-weather">
+      <view class="dt-home-weather-city">{{ liveData.province }}</view>
+      <view class="dt-home-weather-pm">
+        {{ liveData.weather }}<text>{{ liveData.temperature }}°C</text>
+      </view>
+      <view class="dt-home-weather-pm">
+        风速<text>{{ liveData.winddirection }}</text><text>{{ liveData.windpower }}</text>
+      </view>
+
+      <view class="dt-imgae-source">
+        <view class='dt-source'>图片来自</view>
+        <view class="dt-author">网络</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="dt-city-language">
+    <view class="dt-city-language-title">
+      城市寄语
+    </view>
+    <view class="dt-city-language-content">
+      {{ messData.content }}
+    </view>
+    <view class="dt-city-language-info">
+      <view class="dt-city-language-tx">
+        <image src='{{ messData.avatarUrl }}' mode=''></image>
+        <text>{{ messData.nickName }}</text>
+      </view>
+      <view class="dt-city-language-btn" bindtap='chooseSezi'>
+        写寄语
+      </view>
+    </view>
+  </view>
+
+  <view class="dt-news">
+    <view class="dt-news-top">
+      <view class="dt-news-top-title" wx:for="{{ topList }}">
+        <text>{{ item.name }}</text>
+      </view>
+    </view>
+    <view class="dt-news-list">
+      <view class="dt-news-list-content">
+        <view class="dt-title">
+          <view class='dotdot'>高喊“活下去”的万科，厦门楼盘“降价”上热搜，结果一</view>
+          <view class="space">小同</view>
+        </view>
+        <view class="dt-img">
+          
+        </view>
+      </view>
+    </view>
+
+  </view>
+</view>
+
+
+
+<!--隐藏区域  -->
+<view class='maskLayer' wx:if="{{chooseSize}}" bindtap='hideModal'></view>
+<view class='choose' wx:if="{{chooseSize}}" animation='{{animationData}}'>
+  <view class="choose-pad">
+    <view class="choose-box">
+      <input placeholder='写下你的城市寄语' maxlength="32" bindinput="bindKeyInput"></input>
+    </view>
+    <view class="choose-btn">
+      <view class="choose-btn-box">
+        <text class="choose-btn-text">还剩下{{ inputValueLenght }}个字</text>
+        <view class="choose-btn-code" bindtap='getMess'>发布</view>
+      </view>
+    </view>
+  </view>
+</view>
