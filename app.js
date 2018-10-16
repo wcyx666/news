@@ -62,7 +62,7 @@ App({
       'content-type': 'application/json'
     },
     //登录 本地
-    requestHttp: "http://127.0.0.1/wx_news/",
+    requestHttp: "http://127.0.0.1/news-api/",
 
   }
 })

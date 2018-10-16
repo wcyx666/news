@@ -1,0 +1,18 @@
+/* pages/article/article.wxss */
+@import "../../wxParse/wxParse.wxss";
+
+.article {
+  padding: 20rpx;
+}
+.article-title {
+  font-size: 18px;
+}
+.article-info {
+  font-size: 14px;
+  color: #999;
+  margin-top: 20rpx;
+  padding-bottom: 20rpx;
+}
+.article-info .date{
+  margin-left: 20rpx;
+}

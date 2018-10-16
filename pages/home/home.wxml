@@ -1,6 +1,9 @@
 <!--pages/home/home.wxml-->
+<import src="../../wxParse/wxParse.wxml" />
+<import src="../../template/news/news.wxml" />
+<import src="../../template/activity/activity.wxml" />
 <view class="dt-home">
-  <view class="dt-home-banner">
+  <view class="dt-home-banner" style='background: url({{ bannerData.url }}) no-repeat'>
     <view class="dt-home-weather">
       <view class="dt-home-weather-city">{{ liveData.province }}</view>
       <view class="dt-home-weather-pm">
@@ -9,10 +12,9 @@
       <view class="dt-home-weather-pm">
         风速<text>{{ liveData.winddirection }}</text><text>{{ liveData.windpower }}</text>
       </view>
-
       <view class="dt-imgae-source">
         <view class='dt-source'>图片来自</view>
-        <view class="dt-author">网络</view>
+        <view class="dt-author">{{ bannerData.name }}</view>
       </view>
     </view>
   </view>
@@ -34,28 +36,20 @@
       </view>
     </view>
   </view>
-
+  <!-- 信息模块 -->
   <view class="dt-news">
     <view class="dt-news-top">
-      <view class="dt-news-top-title" wx:for="{{ topList }}">
-        <text>{{ item.name }}</text>
+      <view class="dt-news-top-title" wx:for="{{ topList }}" data-index="{{ item.index }}" bindtap='topList'>
+        <text class="{{ item.index == templateIndex?'buttCor':'' }}">{{ item.name }}</text>
       </view>
     </view>
     <view class="dt-news-list">
-      <view class="dt-news-list-content">
-        <view class="dt-title">
-          <view class='dotdot'>高喊“活下去”的万科，厦门楼盘“降价”上热搜，结果一</view>
-          <view class="space">小同</view>
-        </view>
-        <view class="dt-img">
-          
-        </view>
-      </view>
+      <block wx:for="{{ articleData }}">
+        <template is="{{ templateIndex == 1 ? 'news':'activity' }}" data="{{...item}}"/>
+      </block>
     </view>
-
   </view>
 </view>
-
 
 
 <!--隐藏区域  -->
@@ -72,4 +66,12 @@
       </view>
     </view>
   </view>
+</view>
+
+<view wx:if="{{ isHideLoadMore }}" class="icon_loading">
+  <view class="change">
+    <image src='../image/icon_loading.png'></image>
+  </view>
+  
+  正在加载更多
 </view>

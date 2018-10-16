@@ -1,0 +1,14 @@
+<template name="news">
+  <view class="dt-news-list-content" data-id="{{ id }}" bindtap='getArticle'>
+    <view class="dt-title">
+      <view class='dotdot'>{{ title }}</view>
+      <view class="space">
+        <text>{{ name }}</text>
+        <text class="local">{{ local }}</text>
+      </view>
+    </view>
+    <view class="dt-img">
+      <image src='{{ img }}'></image>
+    </view>
+  </view>
+</template>

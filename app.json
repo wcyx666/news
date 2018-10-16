@@ -1,15 +1,15 @@
 {
   "pages":[
-    "pages/message/message",
     "pages/home/home",
-    "pages/my/my",
-    
+    "pages/message/message",
+    "pages/my/my", 
+    "pages/article/article",
     "pages/logs/logs"
   ],
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "小同讲故事",
+    "navigationBarTitleText": "大同城视点",
     "navigationBarTextStyle":"black"
   },
   "tabBar": {
