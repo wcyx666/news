@@ -11,4 +11,58 @@
   <view class="article-content">
     <template is="wxParse" data="{{wxParseData:article.nodes}}" />
   </view>
+  <view class="share">
+    <button open-type='share'>
+      <image src='../image/icon_logo_share.png'></image>
+      <text>分享好友</text>
+    </button>
+    <button open-type='share' class='wechatBtn'>
+      <image src='../image/icon_logo_share.png'></image>
+      <text>分享微信群</text>
+    </button>
+  </view>
+</view>
+<view class="review-area">
+  <view class="review-area-title">
+    全部评论<text wx:if="{{ commentNum > 0 }}">({{ commentNum }})</text> 
+  </view>
+  <view class="review-area-info" wx:for="{{ commentData }}">
+    <view class="review-area-info-tx">
+      <image src='{{ item.avatarUrl }}'></image>
+    </view>
+    <view class="review-area-info-text">
+      <view class="name">
+        {{ item.nickName }}
+      </view>
+      <view class="content">
+        {{ item.content }}
+      </view>
+      <view class="hour">
+        {{ item.hour }}
+      </view>
+    </view>
+  </view>
+  <view style='padding-bottom: 100rpx;text-align: center;font-size:14px;color:#999;padding-top:30rpx;' wx:if="{{ commentNum > 0 }}">已显示全部</view>
+</view>
+
+<view class="comment">
+  <view class="comment-box" bindtap='chooseSezi'>
+    <image src='../image/icon_comment.png'></image>
+    <text>评一下</text>
+  </view>
+</view>
+
+<!--隐藏区域  -->
+<view class='maskLayer' wx:if="{{chooseSize}}" bindtap='hideModal'></view>
+<view class='choose' wx:if="{{chooseSize}}" animation='{{animationData}}'>
+  <view class="choose-pad">
+    <view class="choose-box">
+      <input placeholder='输入你的评论内容' bindinput="bindKeyInput"></input>
+    </view>
+    <view class="choose-btn">
+      <view class="choose-btn-box">
+        <view class="choose-btn-code" bindtap='getMess'>发布</view>
+      </view>
+    </view>
+  </view>
 </view>

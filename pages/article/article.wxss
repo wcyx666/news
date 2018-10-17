@@ -16,3 +16,140 @@
 .article-info .date{
   margin-left: 20rpx;
 }
+.comment {
+  width: 100%;
+  background: #fff;
+  border-top: 1px solid #999;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}
+.comment-box {
+  padding: 25rpx 30rpx;
+  display: -webkit-flex;
+  font-size: 16px;
+}
+.comment image {
+  width: 38rpx;
+  height: 38rpx;
+  vertical-align: middle;
+  margin-right: 20rpx;
+} 
+.comment text {
+  flex: 1;
+  color: #333;
+}
+.maskLayer {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: .5;
+}
+.choose {
+  width: 100%;
+  background: #fff;
+  z-index: 99;
+  position: fixed;
+  bottom: 0;
+}
+.choose-pad {
+  padding: 30rpx 20rpx;
+}
+.choose-box input {
+  height: 80rpx;
+  background: #f5f5f5;
+  border-radius: 5rpx;
+  font-size: 14px;
+  padding-left: 20rpx;
+}
+.choose-btn {
+  overflow: hidden;
+}
+.choose-btn-box {
+  font-size: 14px;
+  color: #999;
+  overflow: hidden;
+  float: right;
+  padding-top: 30rpx;
+}
+.choose-btn-text {
+  float: left;
+  line-height: 50rpx;
+  margin-right: 20rpx;
+}
+.choose-btn-code {
+  width: 100rpx;
+  height: 50rpx;
+  text-align: center;
+  line-height: 50rpx;
+  background: #4b8ff4;
+  color: #fff;
+  border-radius: 50rpx;
+  float: left;
+}
+.review-area-info {
+  display: -webkit-box;
+  border-bottom: 1rpx solid #f5f5f5;
+  padding: 30rpx 0;
+}
+.review-area-info-tx {
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 50rpx;
+  overflow: hidden;
+  margin-right: 20rpx;
+}
+.review-area-info-tx image{
+  width: 50rpx;
+  height: 50rpx;
+}
+.review-area-info-text {
+  flex: 1;
+  font-size: 16px;
+}
+.review-area-info-text .name {
+  color: #000;
+}
+.review-area-info-text .content {
+  color: #333;
+  padding: 20rpx 0;
+}
+.review-area-info-text .hour {
+  color: #999;
+  font-size: 14px;
+}
+.review-area {
+  padding: 20rpx;
+}
+.review-area-title {
+  font-size: 16px;
+  padding-bottom: 10rpx;
+}
+.share {
+  padding-top: 50rpx;
+}
+button {
+  width: 300rpx;
+  background: none;
+  font-size: 14px;
+  border-radius: 50rpx;
+  border:1rpx solid #f5f5f5;
+  float: left;
+}
+button image {
+  width: 40rpx;
+  height: 40rpx;
+  vertical-align: middle;
+  margin-right: 20rpx;
+}
+.wechatBtn {
+  float: right;
+}
+button::after {
+  background: none;
+  border-radius: 50rpx;
+  border:1rpx solid #f5f5f5;
+}

@@ -7,7 +7,11 @@ Page({
    * 页面的初始数据
    */
   data: {
-    articleData:""
+    articleData:"",
+    chooseSize:false,
+    inputValue:"",
+    articleID:"", // 文章ID
+    commentNum:"", // 评论数
   },
 
   /**
@@ -15,30 +19,122 @@ Page({
    */
   onLoad: function (options) {
     var that = this;
+    that.setData({
+      articleID: options.id
+    })
+    that.getComment(options.id); // 获取评论
+    that.getArcticle(options.id);
+  },
 
+  chooseSezi: function (e) {
+    if (app.globalData.userInfo) {
+
+      var that = this;
+      that.setData({
+        // 改变view里面的Wx：if
+        chooseSize: true
+      })
+    } else {
+      wx.showModal({
+        title: '请登录再进行操作',
+        showCancel: false,
+        success: res => {
+          console.log(1)
+        }
+      })
+    }
+  },
+
+  hideModal: function (e) {
+    var that = this;
+    that.setData({
+      chooseSize: false
+    })
+   
+  },
+
+  bindKeyInput(e) {
+    this.setData({
+      inputValue: e.detail.value,
+    })
+  },
+  // 获取文章
+  getArcticle(id){
+    var that = this;
     wx.request({
       url: app.globalData.requestHttp + 'article/wx_read_article_id.php',
       header: app.globalData.requestHeader,
       method: "POST",
-      data:{
-        id: options.id
+      data: {
+        id: id
       },
       success(res) {
-        console.log(res.data.data)
         that.setData({
           articleData: res.data.data
         })
         let article = res.data.data.content;
-        /** 
-        * WxParse.wxParse(bindName , type, data,target,imagePadding) 
-        * 1.bindName绑定的数据名(必填) 
-        * 2.type可以为html或者md(必填) 
-        * 3.data为传入的具体数据(必填) 
-        * 4.target为Page对象,一般为this(必填) 
-        ** 5.imagePadding为当图片自适应是左右的单一padding(默认为0,可选) 
-        */
-
         WxParse.wxParse('article', 'html', article, that, 5);
+      },
+      fail() {
+
+      }
+    })
+  },
+  // 发布评论
+  getMess() {
+    let that = this;
+    if (that.data.inputValue == '') {
+      wx.showToast({
+        title: "请输入内容",
+        icon: "none"
+      })
+    } else {
+      let avatarUrl = app.globalData.userInfo.avatarUrl;
+      let nickName = app.globalData.userInfo.nickName;
+      wx.request({
+        url: app.globalData.requestHttp + 'comment/wx_init_comment.php',
+        header: app.globalData.requestHeader,
+        method: "POST",
+        data: {
+          articleID: that.data.articleID,
+          uid: app.globalData.openid,
+          content: that.data.inputValue,
+          avatarUrl: avatarUrl,
+          nickName: nickName
+        },
+        success(res) {
+          if (res.data.success == 1) {
+            that.getComment(that.data.articleID);
+            that.setData({
+              chooseSize: false
+            })
+            wx.showToast({
+              title: "发布成功",
+              icon: "success"
+            })
+          }
+        },
+        fail() {
+
+        }
+      })
+    }
+  },
+  // 获取评论数据
+  getComment(id) {
+    let that = this;
+    wx.request({
+      url: app.globalData.requestHttp + 'comment/wx_read_comment.php',
+      header: app.globalData.requestHeader,
+      method: "POST",
+      data:{
+        articleid: id,
+      },
+      success(res) {
+        that.setData({
+          commentData:res.data.data,
+          commentNum: res.data.data.length
+        })
       },
       fail() {
 

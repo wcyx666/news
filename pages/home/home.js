@@ -293,21 +293,21 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-   /* let that = this;
+   let that = this;
     that.setData({
-      page:that.data.page+=1,
-      isHideLoadMore:true
+      page:that.data.page+=1
     })
+    wx.showLoading({
+      title:"正在加载"
+    });
     let time = setTimeout(() => { 
       function renderRace() {
         return Promise.race([that.getArticleList()]);
       }
       renderRace().then(function (value) {
-        that.setData({
-          isHideLoadMore: false
-        })
+        wx.hideLoading()
       })
-    },1000)*/
+    },1000)
   },
 
   /**

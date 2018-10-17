@@ -61,17 +61,9 @@
     </view>
     <view class="choose-btn">
       <view class="choose-btn-box">
-        <text class="choose-btn-text">还剩下{{ inputValueLenght }}个字</text>
+        <text class="choose-btn-text">请输入32个字</text>
         <view class="choose-btn-code" bindtap='getMess'>发布</view>
       </view>
     </view>
   </view>
-</view>
-
-<view wx:if="{{ isHideLoadMore }}" class="icon_loading">
-  <view class="change">
-    <image src='../image/icon_loading.png'></image>
-  </view>
-  
-  正在加载更多
 </view>

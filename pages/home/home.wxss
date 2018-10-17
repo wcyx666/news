@@ -160,12 +160,3 @@
   border-bottom: 1rpx solid #f5f5f5;
   padding: 0 20rpx;
 }
-.icon_loading {
-  font-size: 14px;
-  color: #999;
-}
-.change image {
-  width: 24px;
-  height: 24px;
-  vertical-align: middle;
-}
