@@ -44,8 +44,8 @@
       </view>
     </view>
     <view class="dt-news-list">
-      <block wx:for="{{ articleData }}">
-        <template is="{{ templateIndex == 1 ? 'news':'activity' }}" data="{{...item}}"/>
+      <block wx:for="{{ templateIndex == 1 ? articleData : activityData }}">
+        <template is="{{ templateIndex == 1 ? 'news' : 'activity' }}" data="{{...item}}"/>
       </block>
     </view>
   </view>

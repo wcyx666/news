@@ -4,6 +4,7 @@
     "pages/message/message",
     "pages/my/my", 
     "pages/article/article",
+    "pages/activity/activity",
     "pages/logs/logs"
   ],
   "window":{
@@ -16,14 +17,14 @@
     "list": [
       {
         "pagePath": "pages/home/home",
-        "text": "新闻"
-      },
-      {
-        "pagePath": "pages/message/message",
-        "text": "寄语"
+        "iconPath": "pages/image/icon_news.png",
+        "selectedIconPath": "pages/image/icon_news.png",
+        "text": "视点"
       },
       {
         "pagePath": "pages/my/my",
+        "iconPath": "pages/image/icon_my.png",
+        "selectedIconPath": "pages/image/icon_my.png",
         "text": "我的"
       }
     ]

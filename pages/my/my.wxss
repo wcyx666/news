@@ -140,3 +140,38 @@
   color: #999;
 }
 
+.my_list {
+  width: 100%;
+  background: #fff;
+  margin-top: 20rpx;
+}
+.my_list image {
+  width: 48rpx;
+  height: 48rpx;
+}
+.my_list button {
+  width:100%;
+  padding: 20rpx;
+  background:none;
+  font-size:16px;
+  border:none;
+  text-align: left;
+}
+.my_list button image {
+  vertical-align: middle;
+  margin-right: 20rpx;
+}
+.my_list button::after{ 
+  border: none; 
+}
+.my_list_contact {
+  border-bottom: 1rpx solid #f8f8f8;
+}
+.router {
+  width: 40rpx !important;
+  height: 40rpx !important;
+  float: right;
+  margin-top: 25rpx;
+}
+
+

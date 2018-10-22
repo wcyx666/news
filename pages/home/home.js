@@ -18,7 +18,8 @@ Page({
     chooseSize: false,
     inputValue:"",
     inputValueLenght:32,
-    articleData:"",
+    articleData:"", //文章列表内容
+    activityData:"", // 获取列表内容
     templateIndex:"1",
     top: 0,
     windowH:"",
@@ -69,6 +70,7 @@ Page({
     this.randData(); // 获取寄语
     this.getArticleList(); // 获取文章列表
     this.getBanner(); // 获取banner
+    this.getActivityList(); // 获取获取列表
 
 
     wx.getSystemInfo({
@@ -127,7 +129,7 @@ Page({
       header: app.globalData.requestHeader,
       method: "POST",
       data:{
-        page: that.data.page
+        page: that.data.page,
       },
       success(res) {
         console.log(res);
@@ -140,6 +142,27 @@ Page({
       }
     }) 
   },
+  // 获取默认活动列表
+  getActivityList() {
+    let that = this;
+    wx.request({
+      url: app.globalData.requestHttp + 'activity/wx_read_activity.php',
+      header: app.globalData.requestHeader,
+      method: "POST",
+      data: {
+        page: that.data.page,
+      },
+      success(res) {
+        console.log(res);
+        that.setData({
+          activityData: res.data.data,
+        })
+      },
+      fail() {
+
+      }
+    })
+  },
   // 切换模板 
   topList(e){
     console.log(e)
@@ -149,7 +172,6 @@ Page({
     })
   },
   
-
   bindKeyInput(e){
     this.inputValueLenght(e.detail.value.length)
     this.setData({
@@ -241,6 +263,14 @@ Page({
     let id = e.currentTarget.dataset.id;
     wx.navigateTo({
       url: '../article/article?id='+id,
+    })
+  },
+
+  // 跳转到活动详情
+  getActivity(e) {
+    let id = e.currentTarget.dataset.id;
+    wx.navigateTo({
+      url: '../activity/activity?id=' + id,
     })
   },
 

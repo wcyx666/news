@@ -2,6 +2,7 @@
 
 @import "../../wxParse/wxParse.wxss";
 @import "../../template/news/news.wxss";
+@import "../../template/activity/activity.wxss";
 .dt-home-banner {
   width: 100%;
   height: 500rpx;

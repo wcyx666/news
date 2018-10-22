@@ -1,0 +1,11 @@
+.activity-box-list-img image {
+  width: 100%;
+}
+.activity-box-list-title {
+  padding: 30rpx 0;
+  font-size: 16px;
+  color: #999;
+}
+.activity-box-list-title text {
+  float: right;
+}

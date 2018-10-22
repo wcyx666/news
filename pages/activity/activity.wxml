@@ -1,0 +1,26 @@
+<!--pages/article/article.wxml-->
+<import src="../../wxParse/wxParse.wxml" />
+<view class="article">
+  <view class="article-title">
+    {{ articleData.title }}
+  </view>
+  <view class="article-info">
+    <text>{{ articleData.name }}</text>
+    <text class="date">{{ articleData.dates }}</text>
+  </view>
+  <view class="article-content">
+    <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+  </view>
+  <view class="share">
+    <button open-type='share'>
+      <image src='../image/icon_logo_share.png'></image>
+      <text>分享好友</text>
+    </button>
+    <button open-type='share' class='wechatBtn'>
+      <image src='../image/icon_logo_share.png'></image>
+      <text>分享微信群</text>
+    </button>
+  </view>
+</view>
+
+

@@ -14,8 +14,23 @@
       </view>
     </view>
   </view>
-
-  <view class="my_mess">
+  <view class="my_list">
+    <view class="my_list_contact">
+      <button open-type='contact'>
+        <image src='../image/icon_contact.png'></image>
+        <text>投稿建议</text>
+        <image src='../image/icon_tiao.png' class='router'></image>
+      </button>
+    </view>
+    <view class="my_list_share">
+      <button open-type='share'>
+        <image src='../image/icon_share.png'></image>
+        <text>分享我们</text>  
+        <image src='../image/icon_tiao.png' class='router'></image>
+      </button>
+    </view>
+  </view>
+  <!--<view class="my_mess">
     <view class="my_mess_title">
       <text>我的寄语</text>
     </view>
@@ -44,10 +59,10 @@
               <image src='../image/live.png'></image>
               <text>{{ item.live }}</text>
             </view>
-            <!--<view class="message-list-live-p">
+            <view class="message-list-live-p">
               <image src='../image/comment.png'></image>
               <text>评论</text>
-            </view>-->
+            </view>
           </view>
         </view>
       </view>  
@@ -57,5 +72,5 @@
   <view class="my_mess_null" wx:if="{{ messList.length == 0 }}">
     <image src='../image/null.png'></image>
     <view>暂无数据</view>
-  </view>
+  </view>-->
 </view>
